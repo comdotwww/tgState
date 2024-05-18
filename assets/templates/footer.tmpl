@@ -83,18 +83,22 @@
                                         '<div class="response-item response-success">' + 
                                         '<img style="max-width: 50%;height: auto;" src="' +
                                         link + 
-                                        '" />' +
+                                        '" /><br />' +
                                         '上传成功，图片外链：<a target="_blank" href="' +
                                         link +
                                         '">' +
                                         link +
-                                        '</a><div class="copy-links"><span class="copy-code" data-clipboard-text="&lt;img src=&quot;' +
+                                        '</a><div class="copy-links">' + 
+                                        '<span class="copy-code" data-clipboard-text="' +
                                         link +
-                                        '&quot; alt=&quot;Your Alt Text&quot;&gt;">HTML</span><span class="copy-code" data-clipboard-text="![Alt Text](' +
+                                        ';">直链(点击复制)</span><span class="copy-code" data-clipboard-text="![Alt Text](' +
+                                        '<span class="copy-code" data-clipboard-text="&lt;img src=&quot;' +
                                         link +
-                                        ')">Markdown</span><span class="copy-code" data-clipboard-text="[img]' +
+                                        '&quot; alt=&quot;Your Alt Text&quot;&gt;">HTML(点击复制)</span><span class="copy-code" data-clipboard-text="![Alt Text](' +
                                         link +
-                                        '[/img]">BBCode</span></div></div>'
+                                        ')">Markdown(点击复制)</span><span class="copy-code" data-clipboard-text="[img]' +
+                                        link +
+                                        '[/img]">BBCode(点击复制)</span></div></div>'
                                     );
                                 } else {
                                     t = $(

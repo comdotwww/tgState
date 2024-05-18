@@ -133,6 +133,12 @@ docker run -d -p 8088:8088 --name tgstate 参数 --net=host csznet/tgstate:lates
 docker run -d -p 8088:8088 --name tgstate -e token=token -e target=@target -e mode=p --net=host csznet/tgstate:latest
 ```
 
+## Docker Compose
+配置好后执行：
+```bash
+docker-compose up -d
+```
+
 ## Vercel
 
 不支持大于5mb文件，不支持tg获取文件路径

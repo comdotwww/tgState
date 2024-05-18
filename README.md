@@ -1,7 +1,7 @@
 tgState
 ==
 
-[English](https://github.com/csznet/tgState/blob/main/README_en.md) 
+[English](./README_en.md) 
 
 一款以Telegram作为储存的文件外链系统
 
@@ -11,7 +11,7 @@ tgState
 
 支持web上传文件和telegram直接上传
 
-搭配CLoudFlare使用：https://github.com/csznet/tgState/blob/main/CloudFlare.md
+[搭配CLoudFlare使用](./CloudFlare.md)
 
 
 # 参数说明
@@ -67,12 +67,17 @@ bot获取FileID的前置域名地址自动补充及api返回完整url的补充
 
 如果配置了url参数，会直接返回完整的地址
 
-![image](https://github.com/csznet/tgState/assets/127601663/5b1fd6c0-652c-41de-bb63-e2f20b257022)
+![image](https://tgstate.vercel.app/d/BQACAgUAAx0EcyK3ugACEv5mSJc6qUVSeJmsWBf2LEgu7FOw1wACCw4AAjw_SVaIQCHT6DFDfTUE)
 
 # 部署
 
 ## 二进制
-
+编译
+```bash
+go build -tags netgo -o tgState
+```
+<details>
+ <summary>推荐自行编译</summary>
 Linux amd64下载
 
 ```
@@ -90,7 +95,7 @@ Linux 一键脚本
 ```
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/csznet/tgState/main/get.sh)"
 ```
-
+</details>
 
 **使用方法**
 
@@ -178,6 +183,6 @@ POST参数名：`image`
 
 JSON路径：`url`
 
-![image](https://github.com/csznet/tgState/assets/127601663/d70e6a42-1f21-4cbb-8ba5-1e9f7d9660a4)
+![Alt Text](https://tgstate.vercel.app/d/BQACAgUAAx0EcyK3ugACEv9mSJiKqRd2Ujfcba465TK8VY6WCAACFg4AAjw_SVbi1kv6ix4flzUE)
 
 

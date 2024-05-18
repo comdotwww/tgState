@@ -1,0 +1,15 @@
+name: comdotwww
+services:
+    tgstate:
+        build: .
+        ports:
+            - 8088:8088
+        container_name: tgstate
+        environment:
+            - token=token
+            - target=@target
+            - mode=p
+            - pass=comdotwww
+            - url=https://example.com
+        network_mode: host
+        restart: always

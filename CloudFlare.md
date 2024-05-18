@@ -13,14 +13,13 @@ CloudFlare
 目的：解决开启SSL&Cloudflare CDN后重定向过多问题  
 设置路径：域名->SSL/TLS->Overview  
 设置为Full(strict)  
-![SSL证书访问](https://img-static.csz.net/d/BQACAgUAAxkDAAMUZSV2Wggiieo9_XSgODTLhW6fg-UAAukLAAKrzjBVQ0hH_g6a9OUwBA)
+![SSL证书访问](https://tgstate.vercel.app/d/BQACAgUAAx0EcyK3ugACEwABZkiZKEvk4S00smhaD9FX6x60M64AAhcOAAI8P0lW3Mtg_zWAxg81BA)
 
 **完全缓存图片**  
 目的：加快访问速度，减少api请求次数  
 设置路径：域名->Rules->Page Rules->Create Page Rule  
 给```/d/*```设置缓存所有，如下  
-![完全缓存图片](https://img-static.csz.net/d/BQACAgUAAxkDAAMVZSV2jVzUitEjGJz_GjZwprJ-nV8AAuoLAAKrzjBV7g9PeEBhKrkwBA)  
-![完全缓存图片](https://img-static.csz.net/d/BQACAgUAAxkDAAMXZSV2yzXwcPXgwuRctimd5_EDWq8AAuwLAAKrzjBVuAQYIFm1Sv4wBA)  
+![完全缓存图片](https://tgstate.vercel.app/d/BQACAgUAAx0EcyK3ugACEwFmSJn2qkj2huM2xwACVuFDf-OugAACGg4AAjw_SVaxXBQS-B8jLjUE)  
 
 **控制请求速率**  
 目的：防止刷上传  

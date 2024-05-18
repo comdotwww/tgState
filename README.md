@@ -134,6 +134,13 @@ docker run -d -p 8088:8088 --name tgstate -e token=token -e target=@target -e mo
 ```
 
 ## Docker Compose
+### 编译二进制文件
+```bash
+go build -tags netgo -o tgState
+```
+### 修改 docker-compose.yml文件
+配置 mode、target、token、pass、url，其中mode、target、token必填
+
 配置好后执行：
 ```bash
 docker-compose up -d

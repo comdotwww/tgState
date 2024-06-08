@@ -2,6 +2,7 @@
 <script>
     function uploadFile(file) {
         var limit = 4 * 1024 * 1024;
+        $("#progress").css('width','0%');
         if (file.size <= limit) {
             uploadImg(file, 1).then((url) => {
                 // 处理上传成功的情况
@@ -20,6 +21,7 @@
             // 分块数
             var chunkSum = Math.ceil(end / chunkSize);
             var chunkCount = 0;
+            $('.progress .my-progress').show();
             function uploadNextChunk() {
                 if (start < file.size) {
                     var chunk = file.slice(start, end);

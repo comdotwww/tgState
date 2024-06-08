@@ -23,7 +23,7 @@
             var start = 0;
             var end = Math.min(chunkSize, file.size);
             // 分块数
-            var chunkSum = Math.ceil(end / chunkSize);
+            var chunkSum = Math.ceil(file.size / chunkSize);
             var chunkCount = 0;
             function uploadNextChunk() {
                 if (start < file.size) {

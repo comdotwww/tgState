@@ -133,7 +133,7 @@ docker run -d -p 8088:8088 --name tgstate -e token=aaa -e target=@bbb --net=host
 
 Does not support files larger than 5MB and does not support Telegram in getting file paths.
 
-[Click here to go to the Vercel configuration page](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fcsznet%2FtgState&env=token&env=target&env=pass&env=mode&project-name=tgState&repository-name=tgState)
+[Click here to go to the Vercel configuration page](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fcomdotwww%2FtgState&env=token&env=target&env=pass&env=mode&project-name=tgState&repository-name=tgState)
 
 # API Description
 

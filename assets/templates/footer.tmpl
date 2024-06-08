@@ -6,15 +6,20 @@
             uploadImg(file, 1).then((url) => {
                 // 处理上传成功的情况
                 console.log(url);
+                $("#progress").css('width','100%');
             }).catch((error) => {
                 // 处理上传失败的情况
                 console.error(error);
+                $("#progress").css('width','100%');
             });
         } else {
             // 文件大于20MB，需要分割成多个块
             var chunkSize = limit; // 20MB
             var start = 0;
             var end = Math.min(chunkSize, file.size);
+            // 分块数
+            var chunkSum = Math.ceil(end / chunkSize);
+            var chunkCount = 0;
             function uploadNextChunk() {
                 if (start < file.size) {
                     var chunk = file.slice(start, end);
@@ -24,6 +29,8 @@
                             temp = temp + '\n' + url.replace(/^\/d\//, ''); // 每次改变值都换行
                             start = end;
                             end = Math.min(start + chunkSize, file.size);
+                            chunkCount++;
+                            $("#progress").css('width', (parseFloat((chunkCount / chunkSum) * 100).toFixed(2)) + '%');
                             return uploadNextChunk(); // 上传下一个块
                         })
                         .catch((error) => {
@@ -34,6 +41,7 @@
                             return Promise.reject("Upload failed"); // 终止上传
                         });
                 } else {
+                    $("#progress").css('width','100%');
                     return Promise.resolve(); // 如果所有块都上传完成，返回一个已解决的 Promise
                 }
 

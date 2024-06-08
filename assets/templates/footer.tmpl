@@ -3,15 +3,18 @@
     function uploadFile(file) {
         var limit = 4 * 1024 * 1024;
         $("#progress").css('width','0%');
+        $('#progress').html('0%');
         if (file.size <= limit) {
             uploadImg(file, 1).then((url) => {
                 // 处理上传成功的情况
                 console.log(url);
                 $("#progress").css('width','100%');
+                $('#progress').html('100%');
             }).catch((error) => {
                 // 处理上传失败的情况
                 console.error(error);
                 $("#progress").css('width','100%');
+                $('#progress').html('100%');
             });
         } else {
             // 文件大于20MB，需要分割成多个块
@@ -32,7 +35,9 @@
                             start = end;
                             end = Math.min(start + chunkSize, file.size);
                             chunkCount++;
-                            $("#progress").css('width', (parseFloat((chunkCount / chunkSum) * 100).toFixed(2)) + '%');
+                            let progressval = (parseFloat((chunkCount / chunkSum) * 100).toFixed(2)) + '%';
+                            $("#progress").css('width', progressval);
+                            $('#progress').html(progressval);
                             return uploadNextChunk(); // 上传下一个块
                         })
                         .catch((error) => {
@@ -44,6 +49,7 @@
                         });
                 } else {
                     $("#progress").css('width','100%');
+                    $('#progress').html('100%');
                     return Promise.resolve(); // 如果所有块都上传完成，返回一个已解决的 Promise
                 }
 

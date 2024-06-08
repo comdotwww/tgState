@@ -5,16 +5,19 @@
         $('.progress').show();
         $("#progress").css('width','0%');
         $('#progress').html('0%');
+        $('#progress').addClass('active');
         if (file.size <= limit) {
             uploadImg(file, 1).then((url) => {
                 // 处理上传成功的情况
                 console.log(url);
                 $("#progress").css('width','100%');
+                $('#progress').removeClass('active');
                 $('#progress').html('100%');
             }).catch((error) => {
                 // 处理上传失败的情况
                 console.error(error);
                 $("#progress").css('width','100%');
+                $('#progress').removeClass('active');
                 $('#progress').html('100%');
             });
         } else {
@@ -46,11 +49,13 @@
                             console.error(error);
                             var t = $('<div class="response-item response-error">上传失败(' + e.message + ')</div>');
                             $("#response").prepend(t);
+                            $('#progress').removeClass('active');
                             return Promise.reject("Upload failed"); // 终止上传
                         });
                 } else {
                     $("#progress").css('width','100%');
                     $('#progress').html('100%');
+                    $('#progress').removeClass('active');
                     return Promise.resolve(); // 如果所有块都上传完成，返回一个已解决的 Promise
                 }
 
@@ -64,10 +69,12 @@
                     // 将字符串转换为 Blob 对象
                     var blob = new Blob([temp], { type: 'text/plain' });
                     var fileAll = new File([blob], 'fileAll.txt', { type: 'text/plain' });
+                    $('#progress').removeClass('active');
                     return uploadImg(fileAll, 1);
                 })
                 .catch((error) => {
                     // 处理上传失败的情况
+                    $('#progress').removeClass('active');
                     console.error(error);
                 });
         }

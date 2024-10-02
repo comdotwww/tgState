@@ -98,7 +98,7 @@
                     contentType: !1,
                     processData: !1,
                     success: function (e) {
-                        var link = a + e.message;
+                        var link = a.replace(window.location.hostname, 'i' + (new Date().getTime() % 4) +  '.wp.com/' + window.location.hostname) + e.message;
                         var t;
                         if (e.code == 1) {
                             if (ms) {
